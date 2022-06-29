@@ -1,0 +1,16 @@
+<androidx.cardview.widget.CardView android:layout_width="125dp"
+    android:layout_height="140dp"
+    app:cardElevation="6dp"
+    android:id="@+id/card"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardBackgroundColor="@color/color_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_bg_img"
+        android:scaleType="centerCrop"/>
+</androidx.cardview.widget.CardView>

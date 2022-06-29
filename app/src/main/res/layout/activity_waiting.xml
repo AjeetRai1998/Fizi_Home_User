@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/top_layout"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:cardCornerRadius="100dp"
+        android:layout_marginTop="40dp"
+        android:elevation="5dp"
+        android:layout_centerHorizontal="true"
+        >
+    <com.androchef.happytimer.countdowntimer.CircularCountDownView
+        android:id="@+id/dynamicCountDownView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:stroke_foreground_color="@color/colorLightBlue"
+        app:stroke_background_color="@color/gray0"
+        app:stroke_background_thickness="31dp"
+        app:stroke_foreground_thickness="40dp"
+        app:timer_text_color="@color/colorLightBlue"
+        app:timer_text_shown="true"
+        app:timer_text_isBold="true"
+        app:timer_text_format="HOUR_MINUTE_SECOND"
+        app:timer_text_size="20sp"
+        app:timer_type="COUNT_DOWN"
+
+        />
+    </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/timeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:visibility="gone"
+            android:textSize="50sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="29dp" />
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/loader"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
+<TextView
+    android:id="@+id/txt"
+    android:layout_below="@id/top_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:textSize="16sp"
+    android:fontFamily="@font/roboto"
+    android:gravity="center"
+    android:layout_margin="20dp"
+    android:textColor="@color/gray3"
+    android:text="If you wish to cancel your order, you can cancel it within 15 seconds.Post which you will be charge 100% cancellation fee."/>
+
+
+    <ng.max.slideview.SlideView
+        android:id="@+id/trackFood"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/cancelationPolicy"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:padding="15dp"
+        app:sv_animateSlideText="true"
+        app:sv_buttonBackgroundColor="#61B2FBB5"
+        app:sv_buttonImage="@drawable/ic_baseline_double_arrow_24"
+        app:sv_buttonImageDisabled="@drawable/wallet"
+        app:sv_reverseSlide="false"
+        app:sv_slideBackgroundColor="@color/color_green"
+        app:sv_slideText="Swipe to Track Order"
+        app:sv_slideTextColor="@color/color_white"
+        app:sv_slideTextSize="16sp" />
+    <TextView
+        android:id="@+id/cancelationPolicy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cancelOrder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:textColor="@color/gray3"
+        android:text="Or, If you wish to proceed with your order then click here."
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelOrder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/outline_rect_black"
+        android:text="Cancel Order"
+        android:textStyle="bold"
+        app:backgroundTint="#D21002"
+        app:cornerRadius="17dp" />
+</RelativeLayout>

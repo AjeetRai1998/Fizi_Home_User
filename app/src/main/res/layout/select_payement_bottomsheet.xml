@@ -1,0 +1,187 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_sheet_background"
+        android:orientation="vertical"
+        android:layout_margin="4dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/color_black"
+                android:src="@drawable/close_button"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Payment Method"
+                android:textColor="@color/pure_black"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rect_bg_outline"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wallet"
+                    android:textStyle="bold"
+                    android:textColor="@color/pure_black"
+                    />
+                <TextView
+                    android:id="@+id/walletAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/gray3"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/walletImage"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/uncheck"
+                />
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtMsg"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose method to pay the remaining amount of"
+            android:layout_gravity="center"
+            android:textColor="@color/color_green"
+            android:textSize="11dp"/>
+            <LinearLayout
+                android:id="@+id/cashOnDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rect_bg_outline"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pay On Delivery"
+                        android:textStyle="bold"
+                        android:textColor="@color/pure_black"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You can also pay online to the delivery boy at the time of delivery."
+                        android:textColor="@color/gray"
+                        android:textSize="10dp"
+                        />
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/cashDeliveryImage"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/uncheck"
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/onlinePay"
+                android:background="@drawable/rect_bg_outline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                >
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:layout_weight="1">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Online pay"
+                       android:textStyle="bold"
+                       android:textColor="@color/pure_black"
+                       android:layout_weight="1" />
+                   <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Pay online via UPI, Net Banking and Credit/Debit Cards."
+                   android:textColor="@color/gray"
+                   android:textSize="10dp"
+                   />
+               </LinearLayout>
+                <ImageView
+                    android:id="@+id/onlinePayImage"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/uncheck"
+                    />
+            </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selectMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="place your order"
+            android:textStyle="bold"
+            android:padding="15dp"
+            app:backgroundTint="@color/color_blue"
+            android:layout_margin="20dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

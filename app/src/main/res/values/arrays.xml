@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="states" >
+
+        <item>Uttar Pradesh</item>
+        <item>Madhaya Pardesh</item>
+        <item>Uttarakhand</item>
+    </string-array>
+</resources>

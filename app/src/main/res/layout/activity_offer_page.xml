@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".activity.OfferPage">
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_arrow"
+                />
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="L11/53"
+                android:fontFamily="@font/roboto_medium"
+                android:textStyle="bold"
+                android:drawableTint="@color/gray"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:textColor="@color/pure_black"
+                android:layout_marginLeft="15dp"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/fullAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lucknow, Uttar Pradesh"
+            android:fontFamily="@font/roboto"
+             android:textColor="@color/gray"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/line1"
+        android:id="@+id/lineOffer"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+           <androidx.viewpager.widget.ViewPager
+               android:layout_width="match_parent"
+               android:layout_height="190dp"
+               android:id="@+id/bannerImages"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/solid"
+                android:text="Delighting Deals"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/pure_black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Give your soul a delicious treat with these happy deals"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/roboto"
+                android:textSize="12dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:id="@+id/horizontalOffer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/solid"
+                android:text="Top Restaurants Offering"
+                android:textColor="@color/pure_black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/toprest"/>
+            <LinearLayout
+                android:id="@+id/bannerBottom"
+                android:layout_width="match_parent"
+                android:paddingBottom="40dp"
+                android:paddingTop="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_height="180dp">
+
+                    <ImageView
+                        android:layout_width="230dp"
+                        android:layout_height="130dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/bottom_image1" />
+                    <LinearLayout
+                        android:layout_marginTop="130dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capsico family"
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="#607d8b"/>
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/ic_baseline_favorite_24"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="to serve you."
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="#607d8b"/>
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/addressBottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Capsico family"
+                        android:textSize="12dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="145dp"
+                        android:layout_marginLeft="35dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="#474747"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <ImageView
+        android:id="@+id/animation"
+        android:visibility="visible"
+        android:layout_below="@id/line1"
+        android:background="#fffafc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

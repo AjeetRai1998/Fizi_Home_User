@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:layout_height="match_parent"
+    tools:context=".activity.GetPermissionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_weight="1"></View>
+        <ImageView
+            android:id="@+id/locationGif"
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_weight="1"></View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sorry, We need your location to proceed further."
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:fontFamily="@font/roboto"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/userCurrentLocation"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            app:button_duration="200"
+            app:button_scale="0.93"
+            android:textColor="@color/color_white"
+            android:text="Use my current location"
+            android:background="#667DFC"/>
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/opneDeliveryAddress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:button_duration="200"
+            app:button_scale="0.93"
+            android:background="@color/transparent"
+            android:textColor="#667DFC"
+            android:text="Set your location manually"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We only access your location while you are using the app to improve your experience"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto"/>
+    </LinearLayout>
+
+</LinearLayout>

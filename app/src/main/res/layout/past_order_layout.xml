@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/merchantLogo"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:id="@+id/merchantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foodie Nukkad"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="@color/pure_black"
+                />
+            <TextView
+                android:id="@+id/merchantCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Items- Burger Pizza"
+                android:textSize="12sp"
+                android:textColor="@color/pure_black"
+                />
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.200"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="@color/pure_black"
+                    />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 july, 2021"
+            android:textSize="10dp"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/dotted"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layerType="software" />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Kadai Paneer"
+        android:textColor="@color/pure_black"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        />
+    <TextView
+        android:id="@+id/productDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Janurary 18 ,11:13pm"
+        android:textColor="@color/black_lite"
+        android:layout_marginLeft="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <Button
+            android:id="@+id/rateForMerchant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reorder"
+            android:background="@color/transparent"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/colorLightBlue"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            />
+        <Button
+            android:id="@+id/rateForBoy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate Food"
+            android:background="@color/transparent"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/color_green"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/orderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="12 july, 2021"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:paddingRight="5dp"
+            android:textColor="@color/color_white"
+            android:paddingLeft="5dp"
+            android:background="@color/color_green"
+            android:drawableRight="@drawable/checked_icon"
+            android:drawableTint="@color/color_white"
+            android:textSize="12dp"
+            android:layout_marginRight="10dp"
+            />
+    </LinearLayout>
+</LinearLayout>
+</androidx.cardview.widget.CardView>

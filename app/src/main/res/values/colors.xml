@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">@color/contentToolbarColor</color>
+    <color name="colorPrimaryDark">@color/contentToolbarColor</color>
+    <color name="primaryDark">@color/contentToolbarColor</color>
+    <color name="colorAccent">#f7b614</color>
+
+    <color name="color_white">#ffff</color>
+    <color name="color_black">#2F2F2F</color>
+    <color name="color_text_color">#324A33</color>
+
+    <color name="color_orange">#f7b614</color>
+    <color name="color_blue">#034BB6</color>
+
+    <color name="gray0">#EFEFF1</color>
+    <color name="gray08">#ebeff2</color>
+    <color name="gray1">#dddddd</color>
+    <color name="gray3">#A8A8A8</color>
+    <color name="gray">#A8A8A8</color>
+    <color name="oragne">#DC2529</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="color_green">#44AC48</color>
+    <color name="black_lite">#80000000</color>
+
+    <!--colors for light mode-->
+
+    <color name="headercolor">#A8A8A8</color>
+
+    <color name="contentBodyColor">#ffffff</color>
+    <color name="contentTextColor">#000000</color>
+
+    <color name="contentToolbarColor">#F7F7F7</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#000000</color>
+    <color name="line">#000</color>
+    <color name="pure_black">#000000</color>
+</resources>

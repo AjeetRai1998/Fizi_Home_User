@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:clickable="true"
+    style="@style/parent.contentLayout">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:contentInsetStart="0dp"
+            android:elevation="8dp"
+            android:id="@+id/toolbar"
+            android:background="@color/contentToolbarColor">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/iv_back"
+                    android:layout_marginLeft="12dp"
+                    android:scaleType="fitStart"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/oragne"
+                    android:src="@drawable/ic_back"/>
+
+                <RelativeLayout
+                    android:layout_width="383dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/iv_back"
+                    android:layout_toEndOf="@+id/iv_back"
+                    android:background="@color/transparent">
+
+                    <EditText
+                        android:id="@+id/et_search_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/iv_croos"
+                        android:layout_toStartOf="@+id/iv_croos"
+                        android:background="@color/gray0"
+                        android:backgroundTint="@color/transparent"
+                        android:hint="@string/search"
+                        android:windowSoftInputMode="stateVisible"
+                        android:imeOptions="actionSearch"
+                        android:singleLine="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/contentTextColor"
+                        android:textColorHint="@color/contentTextColor"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:id="@+id/iv_croos"
+                        android:layout_height="20dp"
+                        android:layout_width="40dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="@color/oragne"
+                        android:layout_alignParentEnd="true"
+                        android:src="@android:drawable/ic_delete"
+                        android:layout_alignParentRight="true" />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Popular Cuisines Around You"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:textColor="@color/pure_black"
+                    android:textSize="16dp" />
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/searchList"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lineNoData"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/noSearch"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lineNoData1"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/noSearch1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
+

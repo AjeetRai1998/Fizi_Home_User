@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/archivo_black</item>
+        <item>@font/baloo_bhaijaan</item>
+        <item>@font/bungee_inline</item>
+        <item>@font/iceberg</item>
+        <item>@font/roboto</item>
+        <item>@font/roboto_condensed_bold</item>
+        <item>@font/roboto_thin</item>
+        <item>@font/stint_ultra_condensed</item>
+        <item>@font/titan_one</item>
+    </array>
+</resources>

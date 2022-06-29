@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+    android:background="@color/colorPrimary"
+    tools:context=".activity.BrowesStoreActivity">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="8dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_back"
+            android:id="@+id/back"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BURGERS"
+            android:textColor="@color/pure_black"
+            android:layout_marginLeft="15dp"
+            />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:layout_above="@id/bannerBottom1"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shopList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp" />
+            <LinearLayout
+                android:id="@+id/bannerBottom"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:paddingBottom="40dp"
+                android:paddingTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_height="190dp">
+
+                    <ImageView
+                        android:layout_width="230dp"
+                        android:layout_height="130dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/bottom_image1" />
+                    <LinearLayout
+                        android:layout_marginTop="130dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capsico family"
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="#607d8b"/>
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/ic_baseline_favorite_24"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="to serve you."
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="#607d8b"/>
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Capsico family"
+                        android:textSize="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="145dp"
+                        android:layout_marginLeft="35dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="#474747"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:id="@+id/bannerBottom1"
+        android:layout_width="match_parent"
+        android:paddingBottom="40dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:layout_width="230dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/bottom_image1" />
+            <LinearLayout
+                android:layout_marginTop="130dp"
+                android:layout_marginLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capsico family"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="#607d8b"/>
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_baseline_favorite_24"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="to serve you."
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="#607d8b"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/address1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capsico family"
+                android:textSize="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="145dp"
+                android:layout_marginLeft="35dp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="#474747"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        />
+    <LinearLayout
+        android:id="@+id/notAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        >
+    <TextView
+        android:id="@+id/noTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Stores Are Avalible..."
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/color_blue"
+        android:textSize="16sp"
+        />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/goBackToHome"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Back To Home"
+            app:backgroundTint="@color/color_orange"
+            android:layout_margin="50dp"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+</RelativeLayout>

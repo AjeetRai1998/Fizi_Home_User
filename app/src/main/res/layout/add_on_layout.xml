@@ -1,0 +1,55 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:padding="5dp"
+    android:id="@+id/card"
+    android:background="@color/color_white"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/type"
+        android:layout_marginLeft="5dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/vegdot"/>
+    <TextView
+        android:id="@+id/productP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="15dp"
+        android:layout_weight="1"
+        android:textColor="@color/pure_black"
+        android:text="Kheer    $30"/>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="35dp"
+        android:backgroundTint="@color/color_blue"
+        android:visibility="gone"
+        android:layout_height="35dp"/>
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:checked="false"
+        android:visibility="gone"
+        android:button="@drawable/radio_btn"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/checkCircle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        android:backgroundTint="@color/color_blue"
+        android:background="@drawable/ic_baseline_check_circle_24"/>
+    <ImageView
+        android:id="@+id/uncheckCircle"
+        android:layout_width="30dp"
+        android:visibility="gone"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_check_circle_24"/>
+
+</LinearLayout>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back_arrow"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage Account"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/myaccount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/appbar"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/editProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:padding="10dp"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user_icon"
+                    android:layout_gravity="center"
+                    app:tint="@color/color_blue"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profile"
+                    android:textColor="@color/pure_black"
+                    android:drawablePadding="10dp"
+                    android:layout_weight="1"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change your name ,desciption and profile photo"
+                        android:textColor="@color/color_black"
+                        android:textSize="10sp"
+                        />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="20dp"
+                    app:tint="@color/oragne"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/contentTextColor"
+                    android:src="@drawable/forward_arrow" />
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/dotted"
+                android:layerType="software" />
+            <LinearLayout
+                android:id="@+id/manage_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_icon"
+                    android:layout_gravity="center"
+                    app:tint="@color/color_blue"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage Address"
+                    android:textColor="@color/pure_black"
+                    android:layout_weight="1"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add new Address,delete address and Edit Address"
+                        android:textColor="@color/color_black"
+                        android:textSize="10sp"
+                        />
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="20dp"
+                    app:tint="@color/oragne"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/contentTextColor"
+                    android:src="@drawable/forward_arrow" />
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/dotted"
+                app:tint="@color/color_black"
+                android:layerType="software" />
+            <LinearLayout
+                android:id="@+id/favourites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favourites"
+                    android:textColor="@color/color_black"
+                    android:drawableLeft="@drawable/favourit_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_weight="1"
+                    />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="20dp"
+                    app:tint="@color/black_lite"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/contentTextColor"
+                    android:src="@drawable/forward_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/offers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Offers"
+                    android:textColor="@color/color_black"
+                    android:drawableLeft="@drawable/refund"
+                    android:drawablePadding="10dp"
+                    android:layout_weight="1"
+                    />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="20dp"
+                    app:tint="@color/black_lite"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/contentTextColor"
+                    android:src="@drawable/forward_arrow" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/app_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:clickable="true"
+                android:visibility="gone"
+                android:background="?android:attr/selectableItemBackground"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="App Settings"
+                    android:textColor="@color/color_black"
+                    android:drawableLeft="@drawable/settings"
+                    android:drawablePadding="10dp"
+                    android:layout_weight="1"
+                    />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="20dp"
+                    app:tint="@color/black_lite"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/contentTextColor"
+                    android:src="@drawable/forward_arrow" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,250 @@
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="2dp"
+    app:cardCornerRadius="7dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:src="@drawable/burger"
+                android:scaleType="fitXY"
+                android:id="@+id/productimage"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/productName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="18dp"
+                            android:singleLine="true"
+                            android:textStyle="bold"
+                            android:paddingLeft="5dp"
+                            android:textColor="@color/pure_black"
+                            android:fontFamily="@font/roboto"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:visibility="gone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 KG"
+                                android:textSize="14dp"
+                                android:id="@+id/product_weght"
+                                android:textStyle="bold"
+                                android:paddingLeft="5dp"
+                                android:fontFamily="@font/roboto"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:visibility="gone"
+                                android:textSize="14dp"
+                                android:id="@+id/mrp_price"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/roboto"
+                                android:textStyle="bold"/>
+
+
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="₹ "
+                                android:id="@+id/rupees"
+                                android:textSize="14dp"
+                                android:paddingLeft="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primaryDark"
+                                android:gravity="center"
+                                android:fontFamily="@font/roboto"
+                                />
+
+                            <TextView
+                                android:id="@+id/product_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/rupees"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/pure_black"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remove"
+                            android:fontFamily="@font/roboto"
+                            android:padding="2dp"
+                            android:gravity="center"
+                            />
+
+
+                    </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/line_qty"
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="start"
+                            android:gravity="center"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:id="@+id/minus_button"
+                                android:layout_width="40dp"
+                                android:layout_height="60dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ProgressBar
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:backgroundTint="@color/oragne"/>
+
+                                    <ImageView
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:background="@color/color_orange"
+                                        android:gravity="center"
+                                        android:id="@+id/minusbutton"
+                                        android:padding="7dp"
+                                        android:src="@drawable/minus"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold"
+                                        app:tint="@color/color_white" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/quantity_text_view"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/pure_black"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/plus_button"
+                                android:layout_width="40dp"
+                                android:layout_height="60dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ProgressBar
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:backgroundTint="@color/color_orange"/>
+                                    <ImageView
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:background="@color/color_orange"
+                                        android:gravity="center"
+                                        android:id="@+id/pulsbutton"
+                                        android:padding="7dp"
+                                        android:src="@drawable/plus"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold"
+                                        app:tint="@color/color_white" />
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

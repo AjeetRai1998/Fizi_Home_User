@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_rounded_red"
+    android:backgroundTint="@color/color_green"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:gravity="center_vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logo"
+        android:id="@+id/imageView"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹0.0"
+            android:layout_weight="1"
+            android:textSize="13sp"
+            android:textColor="@color/color_white"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have items saved in your cart"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:textColor="@color/color_white"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/viewCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        android:layout_margin="10dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        />
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_outline"
+        android:backgroundTint="#eceff1"
+        android:padding="15dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/rate_me"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thanks for rating!"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/pure_black"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your feedback helps others make better decision about what food to order."
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/pure_black"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/color_green"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

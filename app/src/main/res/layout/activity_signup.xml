@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    style="@style/parent.contentLayout"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:contentInsetStart="0dp"
+            android:elevation="4dp"
+            android:id="@+id/toolbar"
+            android:background="@color/contentToolbarColor">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitStart"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    app:tint="@color/oragne"
+                    android:src="@drawable/ic_back"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/contentTextColor"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_above="@+id/button_layout"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/login_txt_rlt"
+                    android:textColorHint="@color/black_lite"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:textColor="@color/contentTextColor"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:padding="15dp"
+                        android:layout_height="match_parent"
+                        android:textColorHint="@color/black_lite"
+                        android:hint="@string/first_name"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/login_txt_rlt"
+                    app:boxStrokeColor="@color/contentTextColor"
+                    android:textColorHint="@color/gray3"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:textColor="@color/contentTextColor"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="15dp"
+                        android:textColorHint="@color/gray3"
+                        android:hint="@string/last_name"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/email_textinput"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/login_txt_rlt"
+                    app:boxStrokeColor="@color/contentTextColor"
+                    android:textColorHint="@color/gray3"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="@color/gray3"
+                        android:hint="@string/email"
+                        android:padding="15dp"
+                        android:textColor="@color/contentTextColor"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/login_txt_rlt"
+                        app:boxStrokeColor="@color/contentTextColor"
+                        android:textColorHint="@color/gray3"
+                        android:theme="@style/LoginTextInputLayoutStyle"
+                        style="@style/LoginTextInputLayoutStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColorHint="@color/gray3"
+                            android:hint="@string/mobile_number"
+                            android:padding="15dp"
+                            android:textColor="@color/contentTextColor"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColorHint="@color/gray3"
+                    style="@style/LoginTextInputLayoutStyle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="@color/gray3"
+                        android:hint="@string/password"
+                        android:padding="15dp"
+                        android:textColor="@color/contentTextColor"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_signup"
+                    android:text="Sign Up"
+                    android:padding="15dp"
+                    android:layout_marginTop="20dp"
+                    app:cornerRadius="30dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="25dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_above="@id/socail_rlt"
+                        android:layout_marginBottom="20dp"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="1dp"
+                            android:gravity="center"
+                            android:layout_marginTop="11dp"
+                            android:layout_toLeftOf="@+id/or_rlt"
+                            android:layout_toStartOf="@+id/or_rlt"
+                            android:background="@color/contentTextColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/or_sign_up_using"
+                            android:textColor="@color/oragne"
+                            android:textSize="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/or_rlt"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:shadowColor="@color/gray3" />
+
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="1dp"
+                            android:gravity="center"
+                            android:layout_marginTop="11dp"
+                            android:layout_toRightOf="@+id/or_rlt"
+                            android:layout_toEndOf="@+id/or_rlt"
+                            android:background="@color/contentTextColor" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/socail_rlt"
+                        android:layout_marginBottom="20dp"
+                        android:layout_alignParentBottom="true">
+
+                        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/white_rounded_button"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true">
+
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:paddingTop="10dp"
+                                android:layout_centerInParent="true"
+                                android:paddingBottom="10dp"
+                                android:src="@drawable/facebook"
+                                android:layout_centerVertical="true"/>
+
+                        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+
+                        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/white_rounded_button">
+
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_google"
+                                android:layout_centerVertical="true" />
+
+                        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/contentToolbarColor"
+            android:id="@+id/button_layout"
+            android:layout_height="70dp">
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

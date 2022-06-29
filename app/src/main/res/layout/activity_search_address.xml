@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activity.SearchAddressActivity">
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/back_arrow"
+            android:id="@+id/back"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:backgroundTint="@color/gray"
+                android:background="@drawable/search"/>
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Search Here...."
+                android:singleLine="true"
+                android:paddingLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/pure_black"
+                android:fontFamily="@font/roboto"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Result"
+        android:visibility="gone"
+        android:textColor="@color/pure_black"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/roboto"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/line1"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressList"/>
+
+    <LinearLayout
+        android:id="@+id/no_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/noImg"
+            android:layout_width="350dp"
+            android:layout_height="350dp"></ImageView>
+
+
+   </LinearLayout>
+</LinearLayout>

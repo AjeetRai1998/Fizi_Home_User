@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            >
+            <EditText
+                android:id="@+id/addressType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Home/office"
+                android:textSize="16sp"
+                android:lines="1"
+                android:padding="10dp"
+                android:inputType="textCapSentences|textMultiLine"
+                />
+            <EditText
+                android:id="@+id/landmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Landmark here."
+                android:textSize="16sp"
+                android:lines="1"
+                android:padding="10dp"
+                android:inputType="textCapSentences|textMultiLine"
+                />
+            <EditText
+                android:id="@+id/addressline1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/addressline1_hint"
+                android:textSize="16sp"
+                android:lines="1"
+                android:padding="10dp"
+                android:inputType="textCapSentences|textMultiLine"
+                />
+            <EditText
+                android:id="@+id/addressline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/citydetails"
+                android:hint="Enter Location"
+                android:lines="3"
+                android:padding="10dp"
+                android:minLines="1"
+                android:textSize="16sp"
+                android:inputType="textCapSentences|textMultiLine"
+                />
+
+            <EditText
+                android:id="@+id/citydetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="city pincode state"
+                android:paddingLeft="4dp"
+                android:padding="10dp"
+                android:textColor="@color/quantum_grey600"
+                android:textSize="16sp"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fab_select_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Continue"
+                app:backgroundTint="@color/color_blue"
+                android:textColor="@color/quantum_white_100"
+                android:background="@color/quantum_googgreen500"
+                app:cornerRadius="10dp"
+                >
+            </com.google.android.material.button.MaterialButton>
+
+
+        </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="38dp"
+        android:layout_marginStart="8dp"
+        app:srcCompat="@drawable/ic_done_white_24dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentLeft="true" />
+</RelativeLayout>

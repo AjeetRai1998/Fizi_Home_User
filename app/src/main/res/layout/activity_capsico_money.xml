@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_radius">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back_arrow"
+                    android:background="@null"
+                    android:onClick="goToBack"
+                    app:tint="@color/color_black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="My Wallet"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/color_black"/>
+            </LinearLayout>
+
+
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_above="@id/add_money"
+        android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="250dp">
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:rotation="-20"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="30dp"
+                        android:backgroundTint="#93FFD262"
+                        android:background="@drawable/rounded_button"
+                        android:layout_height="150dp"/>
+
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="30dp"
+                        android:rotation="-10"
+                        android:layout_height="150dp"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#93FFD262" />
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#FFD262">
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="10dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/capsico_logo"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textStyle="italic"
+                                android:fontFamily="@font/roboto"
+                                android:text="WE ALL"
+                                android:textColor="@color/color_black"
+                                android:textSize="15dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="LOVE"
+                                android:textStyle="italic"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:textColor="@color/color_black"
+                                android:textSize="15dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:fontFamily="@font/roboto"
+                                android:text="CAPSICO"
+                                android:textStyle="italic"
+                                android:textColor="@color/color_black"
+                                android:textSize="15dp" />
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textStyle="bold"
+                            android:text="CAPSICO WALLET"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:textColor="@color/pure_black"
+                            android:textSize="17dp" />
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal">
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="1"
+                               android:layout_marginTop="5dp"
+                               android:layout_marginLeft="15dp"
+                               android:layout_gravity="start"
+                               android:fontFamily="@font/teko_regular"
+                               android:text="Available Capsico Balance"
+                               android:textColor="@color/pure_black"
+                               android:textSize="13dp" />
+                           <TextView
+                               android:id="@+id/wallet_money"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:gravity="center"
+                               android:layout_marginRight="10dp"
+                               android:layout_marginLeft="25dp"
+                               android:fontFamily="@font/teko_regular"
+                               android:text="\u20b90"
+                               android:textStyle="bold"
+                               android:textColor="@color/pure_black"
+                               android:textSize="18dp" />
+                       </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Money"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/pure_black"
+                    android:textSize="18dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="\u20b9"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/pure_black"
+                        android:textSize="30dp"/>
+                    <EditText
+                        android:id="@+id/inputAmount"
+                        android:layout_width="match_parent"
+                        android:textSize="30dp"
+                        android:textColor="@color/pure_black"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textStyle="bold"
+                        android:inputType="number"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/gray"/>
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:button_duration="200"
+                    android:layout_margin="20dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/pure_black"
+                    android:textSize="20dp"
+                    android:background="@color/colorAccent"
+                    app:button_scale="0.93"
+                    android:text="Proceed to Add Money"/>
+
+                <LinearLayout
+                    android:id="@+id/transaction_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/color_white"
+                    android:paddingLeft="20dp"
+
+                    android:paddingRight="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/txtTransa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Your Transactions"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/pure_black"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="18dp" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:id="@+id/transaction_list"/>
+
+                    <LinearLayout
+                        android:id="@+id/noData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:src="@drawable/no_transaction"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No Transaction Yet"
+                            android:gravity="center"
+                            android:textSize="15dp"
+                            android:fontFamily="@font/roboto"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/add_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:clickable="true"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_orange"
+        android:padding="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Money"
+                android:textColor="@color/color_white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/forward_arrow"
+                app:tint="@color/color_white"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

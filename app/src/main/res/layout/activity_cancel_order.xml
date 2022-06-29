@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffd872"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_above="@+id/btn_line"
+        android:layout_width="match_parent"
+        android:background="#ffd872"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/animation"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <TextView
+                android:text="Your Order has been cancelled successfully"
+                android:layout_marginTop="28dp"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/pure_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.skydoves.elasticviews.ElasticButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="GO BACK"
+                android:id="@+id/goToHome"
+                app:cornerRadius="20dp"
+                app:button_duration="200"
+                app:button_scale="0.93"
+                android:layout_margin="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/outline_rect_black"
+                app:backgroundTint="@color/colorLightBlue"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
