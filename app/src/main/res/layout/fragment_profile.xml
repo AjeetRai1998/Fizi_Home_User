@@ -289,7 +289,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Capsico Money"
+                                android:text="Hungerji Money"
                                 android:textSize="16dp"
                                 app:tint="@color/color_blue"
                                 android:textColor="@color/color_black"

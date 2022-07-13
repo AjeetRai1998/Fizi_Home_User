@@ -1,6 +1,10 @@
 package digi.coders.thecapsico.helper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class Constraint {
 
@@ -57,4 +61,23 @@ public class Constraint {
     public void setLongitude(String longitude) {
         Longitude = longitude;
     }
+
+
+    public static String getDate() {
+
+        Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
+        calendar.setTime(new Date());
+        // calendar.add(Calendar.DATE);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");//hh:mm a "yyyy-MM-dd"
+        String time = null;
+        try {
+            time = sdf.format(calendar.getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return time;
+    }
+
 }

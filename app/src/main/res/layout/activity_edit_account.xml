@@ -189,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:text="Save Changes"
                     android:padding="15dp"
-                    app:backgroundTint="@color/color_blue"
+                    app:backgroundTint="@color/color_black"
                     android:layout_marginTop="40dp"
                     />
                     <com.google.android.material.button.MaterialButton
@@ -199,7 +199,7 @@
                         android:text="Update Profile Picture"
                         android:padding="15dp"
                         android:visibility="gone"
-                        app:backgroundTint="@color/color_blue"
+                        app:backgroundTint="@color/color_black"
                         android:layout_marginTop="20dp"
                         />
                     <View

@@ -7,6 +7,10 @@ public class Orderproduct {
     private String id;
     @SerializedName("merchant_id")
     private String merchantId;
+
+    @SerializedName("return_status")
+    private String return_status;
+
     @SerializedName("user_id")
     private String userId;
     @SerializedName("order_id")
@@ -47,6 +51,14 @@ public class Orderproduct {
 
     public void setSpecial_intersections(String special_intersections) {
         this.special_intersections = special_intersections;
+    }
+
+    public String getReturn_status() {
+        return return_status;
+    }
+
+    public void setReturn_status(String return_status) {
+        this.return_status = return_status;
     }
 
     public String getId() {

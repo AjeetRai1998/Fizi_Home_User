@@ -66,6 +66,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         singleTask=(SingleTask)getApplication();
         //handle back
+
+        binding.returnOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this,ReturnOrder.class));
+
+            }
+        });
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

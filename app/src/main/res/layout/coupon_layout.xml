@@ -23,7 +23,7 @@
                      android:id="@+id/image"
                      android:layout_width="100dp"
                      android:layout_height="50dp"
-                     android:src="@drawable/logo"/>
+                     android:src="@drawable/hungerji_logo"/>
                  <TextView
                      android:id="@+id/expiryDate"
                      android:layout_width="wrap_content"

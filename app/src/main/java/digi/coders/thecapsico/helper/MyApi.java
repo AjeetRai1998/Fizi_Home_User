@@ -3,6 +3,7 @@ import android.os.Bundle;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import digi.coders.thecapsico.helper.models.ResponseGetMerchantCategory;
 import digi.coders.thecapsico.model.AddressResponse.ResponsePlace;
 import digi.coders.thecapsico.model.LatLongRespons.ResponseLatLong;
 import digi.coders.thecapsico.model.MenuModel;
@@ -70,6 +71,14 @@ public interface MyApi {
                                     );
 
     @FormUrlEncoded
+    @POST("highlighted_merchant")
+    Call<JsonArray> getHighlightetMerchant(@Field("user_id") String userId,
+                                   @Field("merchant_category_id") String merchantCategoryid,
+                                           @Field("position") String position
+
+    );
+
+    @FormUrlEncoded
     @POST("GetMerchants")
     Call<JsonArray> getOfferMerchant(@Field("user_id") String userId,
                                    @Field("merchant_category_id") String merchantCategoryid,
@@ -100,6 +109,11 @@ public interface MyApi {
     @POST("product")
     Call<JsonArray> getAllProduct(@Field("user_id") String userId,
                                   @Field("category_id") String categoryId);
+
+    @FormUrlEncoded
+    @POST("merchantCategory")
+    Call<JsonArray> getMerchantsCategory(@Field("user_id") String userId);
+    //   @Field("merchant_category_id") String categoryId)
 
 
 
@@ -162,21 +176,9 @@ public interface MyApi {
                                    @Field("addonproduct_id") String addId,
                                    @Field("addonproduct_prize") String price,
                                    @Field("special_intersections") String specialInstruction);
-
-
-
-
-
-
-
     @FormUrlEncoded
     @POST("clear")
     Call<JsonArray> clearCart();
-
-
-
-
-
 
 
     @FormUrlEncoded
@@ -184,14 +186,18 @@ public interface MyApi {
     Call<JsonArray> getSlider(@Field("user_id") String userId,
                               @Field("city_id") String city,
                               @Field("latitude") String latitude,
+                              @Field("merchant_category_id") String merchant_category_id,
                               @Field("longitude") String longitude
     );
 
 
-
-
-
-
+    @FormUrlEncoded
+    @POST("ReturnOrder")
+    Call<JsonArray> ReturnOrderApi(@Field("user_id") String userId,
+                              @Field("order_id") String order_id,
+                              @Field("return_messagge") String return_messagge,
+                              @Field("product_id") String product_id
+    );
 
     @FormUrlEncoded
     @POST("addAddress")
@@ -296,6 +302,16 @@ public interface MyApi {
     @POST("myOrders")
     Call<JsonArray> myOrder(@Field("user_id") String userId,
                             @Field("order_id") String orderId);
+    @FormUrlEncoded
+    @POST("myReturnOrders")
+    Call<JsonArray> myReturnOrder(@Field("user_id") String userId);
+
+    @FormUrlEncoded
+    @POST("myReturnOrders")
+    Call<JsonArray> myReturnOrderDetails(
+            @Field("user_id") String userId,
+            @Field("return_order_id") String return_order_id
+    );
 
 
     @FormUrlEncoded

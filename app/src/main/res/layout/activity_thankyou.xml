@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Track your Food"
-            app:backgroundTint="@color/oragne"
+            app:backgroundTint="@color/colorAccent"
             android:padding="10dp"
             android:layout_alignParentBottom="true"
                 />
@@ -79,7 +79,7 @@
             android:onClick="goToHome"
             app:backgroundTint="@color/color_orange"
             android:padding="10dp"
-            android:backgroundTint="@color/color_blue"
+            android:backgroundTint="@color/color_black"
             android:layout_alignParentBottom="true"
             />
 

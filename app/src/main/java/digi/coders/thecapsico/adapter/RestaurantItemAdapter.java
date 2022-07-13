@@ -51,8 +51,8 @@ public class RestaurantItemAdapter extends RecyclerView.Adapter<RestaurantItemAd
         }
         else
         {
-            //Grid
-            view=LayoutInflater.from(parent.getContext()).inflate(R.layout.category_grid_layout, parent, false);
+            //Grid  category_grid_layout
+            view=LayoutInflater.from(parent.getContext()).inflate(R.layout.category_layout, parent, false);
         }
 
         return new MyHolder(view);
@@ -81,7 +81,7 @@ public class RestaurantItemAdapter extends RecyclerView.Adapter<RestaurantItemAd
                 holder.binding1.categoryTitle.setText(category.getName());
                 Picasso.get().load(AppConstraints.BASE_URL+AppConstraints.CATEGORY+category.getIcon())
                         .placeholder(R.drawable.placeholder1).into(holder.binding1.categoryImage);
-                    if (position == 4) {
+                    if (position == 7) {
                         holder.binding1.mainLayout.setVisibility(View.GONE);
                         holder.binding1.viewAllLayout.setVisibility(View.VISIBLE);
                         holder.binding1.viewAllLayout.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +152,7 @@ public class RestaurantItemAdapter extends RecyclerView.Adapter<RestaurantItemAd
 
     public class MyHolder extends RecyclerView.ViewHolder {
         CategoryLayoutBinding binding1;
-        CategoryGridLayoutBinding binding2;
+        CategoryLayoutBinding binding2;
 
         public MyHolder(@NonNull @NotNull View itemView) {
             super(itemView);
@@ -162,7 +162,7 @@ public class RestaurantItemAdapter extends RecyclerView.Adapter<RestaurantItemAd
             }
             else
             {
-                binding2=CategoryGridLayoutBinding.bind(itemView);
+                binding2=CategoryLayoutBinding.bind(itemView);
             }
 
         }

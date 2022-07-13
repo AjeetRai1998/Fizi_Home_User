@@ -86,7 +86,7 @@
            android:padding="10dp"
            android:layout_margin="10dp"
            app:layout_duration="200"
-           android:background="@color/color_blue"
+           android:background="@color/colorAccent"
            app:layout_scale="0.93">
            <LinearLayout
                android:layout_width="match_parent"

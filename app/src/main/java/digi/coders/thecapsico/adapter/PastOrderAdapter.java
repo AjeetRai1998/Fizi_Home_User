@@ -54,7 +54,6 @@ public class PastOrderAdapter extends RecyclerView.Adapter<PastOrderAdapter.MyHo
     public PastOrderAdapter(List<MyOrder> myOrderList,Activity ctx) {
         this.myOrderList = myOrderList;
         this.ctx = ctx;
-
         singleTask = (SingleTask) ctx.getApplication();
     }
 

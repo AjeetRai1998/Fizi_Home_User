@@ -91,6 +91,7 @@ import digi.coders.thecapsico.fragmentmodel.HomeViewModel;
 import digi.coders.thecapsico.helper.AppConstraints;
 import digi.coders.thecapsico.helper.Constraint;
 import digi.coders.thecapsico.helper.GPSTracker;
+import digi.coders.thecapsico.helper.MYMvp;
 import digi.coders.thecapsico.helper.MyApi;
 import digi.coders.thecapsico.helper.Refresh;
 import digi.coders.thecapsico.helper.SharedPrefManagerLocation;
@@ -109,7 +110,7 @@ import retrofit2.Response;
 
 public class DashboardActivity extends AppCompatActivity implements Refresh , GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener {
+        LocationListener, MYMvp {
 
     ActivityDashboardBinding binding;
     Fragment fragment;
@@ -276,7 +277,7 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
             }
         });
 
-
+        binding.localityName.setSelected(true);
 
         //handle menu
 
@@ -293,6 +294,8 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(DashboardActivity.this, permission, 500);
         }
+
+
 
 
         updateVersionName();
@@ -469,6 +472,12 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
             }
     }
 
+    @Override
+    public void getData(String id) {
+
+
+    }
+
     public class GetLocation extends AsyncTask<String,String,String> {
 
 //        ProgressDialog progressDialog;
@@ -604,7 +613,9 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
 
     private void loadMerchantCategory() {
         MyApi myApi = singleTask.getMerchaneRetrofit().create(MyApi.class);
-        Call<JsonArray> call = myApi.getMerchantCategory();
+        String js=singleTask.getValue("user");
+        User user=new Gson().fromJson(js,User.class);
+        Call<JsonArray> call = myApi.getMerchantsCategory(user.getId());
         call.enqueue(new Callback<JsonArray>() {
             @Override
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
@@ -622,7 +633,6 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
                                 MerchantCategory merchantCategory = new Gson().fromJson(jsonArray1.getJSONObject(i).toString(), MerchantCategory.class);
                                 merchantCategoryList.add(merchantCategory);
                             }
-
                             setInAdapter(merchantCategoryList);
                             if (key == 1) {
                                 exchangeFragment(new CartFragment());
@@ -700,7 +710,7 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
 
     private void setInAdapter(List<MerchantCategory> merchantCategoryList) {
         binding.merchantCategory.setLayoutManager(new LinearLayoutManager(DashboardActivity.this, LinearLayoutManager.HORIZONTAL, false));
-        MerchantCategoryAdapter adapter = new MerchantCategoryAdapter(merchantCategoryList);
+        MerchantCategoryAdapter adapter = new MerchantCategoryAdapter(merchantCategoryList, digi.coders.thecapsico.activity.DashboardActivity.this);
         adapter.getPosition(new MerchantCategoryAdapter.FindPosition() {
             @Override
             public void find(View view, int position) {
@@ -763,8 +773,9 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
                         break;
                     case R.id.booking:
                         //fragment=new BookingFragment();
-                        fragment = new BookingFragment();
-                        exchangeFragment(fragment);
+//                        fragment = new BookingFragment();
+//                        exchangeFragment(fragment);
+                        startActivity(new Intent(getApplicationContext(), SearchActivity.class));
                         break;
                     case R.id.account:
                         //fragment=new ProfileFragment();
@@ -800,6 +811,7 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, new IntentFilter("GPSLocationUpdates"));
 
         binding.bottomNavigation.setSelectedItemId(R.id.home);
+//        getUpdate();
 
     }
 
@@ -1125,6 +1137,11 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
     private void getUpdate() {
         String js=singleTask.getValue("user");
         User user=new Gson().fromJson(js,User.class);
+        String [] fname=user.getName().split(" ");
+
+        Picasso.get().load(AppConstraints.BASE_URL + AppConstraints.USER + user.getIcon())
+                .placeholder(R.drawable.profile_placeholder).into(binding.image);
+        binding.tvName.setText(fname[0]);
         MyApi myApi=singleTask.getRetrofit1().create(MyApi.class);
         Call<JsonObject> call=myApi.getUpdate("User");
         call.enqueue(new Callback<JsonObject>() {
@@ -1141,6 +1158,15 @@ public class DashboardActivity extends AppCompatActivity implements Refresh , Go
                             String versionName=jsonObject1.getString("version_name");
                             String VersionCode=jsonObject1.getString("version_code");
                             String important=jsonObject1.getString("importance");
+
+//                            user.getIcon();
+
+//                            Picasso.get().load(AppConstraints.BASE_URL + AppConstraints.MERCHANT_BANNER + user.getIcon())
+//                                    .placeholder(R.drawable.profile_placeholder).into(binding.image);
+//
+//                            binding.tvName.setText(user.getName());
+
+
 
                             if(Integer.parseInt(VersionCode)> BuildConfig.VERSION_CODE){
                                 showUpdate(DashboardActivity.this,important);

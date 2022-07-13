@@ -4,7 +4,7 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
-   <LinearLayout
+   <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
@@ -14,7 +14,6 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="Plain Tawa Roti ✕ 12"
-           android:layout_weight="1"
            android:textStyle="bold"
            android:textSize="16sp"
            android:textColor="@color/pure_black"
@@ -24,12 +23,25 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="₹80"
+           android:layout_alignParentEnd="true"
            android:layout_marginRight="10dp"
            android:textStyle="bold"
            android:textSize="16sp"
            android:textColor="@color/pure_black"
            />
-   </LinearLayout>
+   </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_return_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Return Request Sent)"
+        android:textColor="@color/colorAccent"
+        android:layout_marginStart="4dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
+
     <TextView
         android:id="@+id/addonItems"
         android:visibility="gone"
@@ -41,4 +53,9 @@
         android:textSize="14sp"
         android:textColor="@color/red"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/color_black"/>
 </LinearLayout>

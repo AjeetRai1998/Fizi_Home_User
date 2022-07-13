@@ -179,7 +179,7 @@
             android:text="place your order"
             android:textStyle="bold"
             android:padding="15dp"
-            app:backgroundTint="@color/color_blue"
+            app:backgroundTint="@color/color_black"
             android:layout_margin="20dp" />
 
     </LinearLayout>

@@ -40,7 +40,7 @@
         android:layout_marginBottom="10dp"
         android:padding="15dp"
         android:text="Try Again"
-        app:backgroundTint="@color/color_orange" />
+        app:backgroundTint="@color/color_black" />
 
 
 </RelativeLayout>

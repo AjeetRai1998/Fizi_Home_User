@@ -17,13 +17,12 @@
         android:id="@+id/goToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/reOrder"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:text="Go to Home"
-        android:layout_above="@id/reOrder"
-        app:backgroundTint="@color/color_blue"
         android:padding="15dp"
-        />
+        android:text="Go to Home"
+        app:backgroundTint="@color/color_black" />
 
     <com.google.android.material.button.MaterialButton
     android:id="@+id/reOrder"
@@ -33,7 +32,7 @@
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
     android:text="Try Again"
-    app:backgroundTint="@color/red"
+    app:backgroundTint="@color/colorAccent"
     android:padding="15dp"
     />
 

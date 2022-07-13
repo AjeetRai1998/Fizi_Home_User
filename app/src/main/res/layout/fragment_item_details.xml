@@ -128,36 +128,35 @@
             />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
+
     <RelativeLayout
         android:id="@+id/addCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_blue"
-        android:padding="15dp"
         android:layout_alignParentBottom="true"
-        >
+        android:background="@color/color_black"
+        android:padding="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Cart"
             android:layout_centerHorizontal="true"
+            android:text="Add Cart"
             android:textColor="@color/color_white"
             android:textSize="18sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="₹ 0"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
             android:layout_centerHorizontal="true"
-            android:textStyle="bold"
-            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:text="₹ 0"
             android:textColor="@color/color_white"
-            />
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 </RelativeLayout>

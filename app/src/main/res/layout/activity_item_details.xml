@@ -259,7 +259,7 @@
         android:id="@+id/addToCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_blue"
+        android:background="@color/colorAccent"
         android:padding="13dp"
         android:layout_alignParentBottom="true"
         >

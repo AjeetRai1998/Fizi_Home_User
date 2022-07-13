@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <color name="colorPrimary">@color/contentToolbarColor</color>
-    <color name="colorPrimaryDark">@color/contentToolbarColor</color>
-    <color name="primaryDark">@color/contentToolbarColor</color>
-    <color name="colorAccent">#f7b614</color>
+    <color name="colorPrimary">@color/color_white</color>
+    <color name="colorPrimaryDark">@color/colorAccent</color>
+    <color name="primaryDark">@color/colorAccent</color>
+    <color name="colorAccent">#E9F44336</color>//#  f7b614
 
     <color name="color_white">#ffff</color>
     <color name="color_black">#2F2F2F</color>

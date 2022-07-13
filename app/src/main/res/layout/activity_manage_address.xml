@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:text="Add new Addresss"
             android:layout_margin="10dp"
-            app:backgroundTint="@color/color_orange"
+            app:backgroundTint="@color/color_black"
             />
 
 

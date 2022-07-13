@@ -9,6 +9,8 @@ public class MyOrder {
     private String userId;
     @SerializedName("order_id")
     private String orderId;
+    @SerializedName("return_order_id")
+    private String return_order_id;
     private String coupon;
     @SerializedName("coupon_discount")
     private String couponDiscount;
@@ -52,6 +54,15 @@ public class MyOrder {
     private Review[] deliveryboyrating;
     private String rejectmsg;
     private String delivery_boy_status_accepted;
+
+
+    public String getReturn_order_id() {
+        return return_order_id;
+    }
+
+    public void setReturn_order_id(String return_order_id) {
+        this.return_order_id = return_order_id;
+    }
 
     public DeliveryBoy[] getDeliveryboy() {
         return deliveryboy;

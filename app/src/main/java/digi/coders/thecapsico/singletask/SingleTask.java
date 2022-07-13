@@ -12,9 +12,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SingleTask extends Application {
     private Retrofit retrofit,retrofit1;
-    public static final String BASE_URL="http://designerpriya.com/ApiTest/";
-    public static final String BASE_URL1="http://designerpriya.com/";
-    public static final String MERCHANT_BASE_URL="http://designerpriya.com/MerchantAPIs/";
+    public static final String BASE_URL="https://hungerji.com/ApiTest/";
+    public static final String BASE_URL1="https://hungerji.com/";
+    public static final String MERCHANT_BASE_URL="https://hungerji.com/MerchantAPIs/";
     public static final String MAP_URL="https://maps.googleapis.com/maps/api/place/";
     private Retrofit merchantRetrofit;
     private Retrofit mapRetrofit;

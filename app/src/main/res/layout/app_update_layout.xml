@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The installed version of Capsico is no longer supported. Please update your app."
+                android:text="The installed version of Hungerji is no longer supported. Please update your app."
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:fontFamily="@font/roboto_bold"

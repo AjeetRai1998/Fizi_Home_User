@@ -22,6 +22,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/back_arrow"
+                    android:tint="@color/color_white"
                     android:onClick="goBack"
                     />
                 <TextView
@@ -30,7 +31,7 @@
                     android:text="Favourites"
                     android:layout_marginLeft="15dp"
                     android:textSize="18sp"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_white"
                     />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>

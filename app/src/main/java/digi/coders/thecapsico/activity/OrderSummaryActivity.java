@@ -8,6 +8,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Activity;
@@ -26,6 +27,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,6 +37,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -50,29 +53,37 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import digi.coders.thecapsico.BuildConfig;
 import digi.coders.thecapsico.R;
 import digi.coders.thecapsico.adapter.OrderItemsAdapter;
+import digi.coders.thecapsico.adapter.ReturnAdapter;
 import digi.coders.thecapsico.databinding.ActivityOrderSummaryBinding;
 import digi.coders.thecapsico.databinding.ViewOrderBottomSheetLayoutBinding;
 import digi.coders.thecapsico.helper.AppConstraints;
+import digi.coders.thecapsico.helper.Constraint;
+import digi.coders.thecapsico.helper.MYMvp;
 import digi.coders.thecapsico.helper.MyApi;
 import digi.coders.thecapsico.helper.NotificationUtils;
 import digi.coders.thecapsico.helper.ProgressDisplay;
 import digi.coders.thecapsico.helper.ShowProgress;
+import digi.coders.thecapsico.model.CheckboxModel;
 import digi.coders.thecapsico.model.DeliveryBoy;
 import digi.coders.thecapsico.model.Merchant;
 import digi.coders.thecapsico.model.MyOrder;
 import digi.coders.thecapsico.model.Order;
 import digi.coders.thecapsico.model.OrderStatus;
 import digi.coders.thecapsico.model.Orderproduct;
+import digi.coders.thecapsico.model.ProductId;
+import digi.coders.thecapsico.model.ReturnProductModel;
 import digi.coders.thecapsico.model.Review;
 import digi.coders.thecapsico.model.User;
 import digi.coders.thecapsico.model.UserAddress;
@@ -81,16 +92,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class OrderSummaryActivity extends AppCompatActivity {
+public class OrderSummaryActivity extends AppCompatActivity implements MYMvp {
 
     public static MyOrder myOrder;
     public static String orderId;
+    public static String Product_IDs;
     ActivityOrderSummaryBinding binding;
     private SingleTask singleTask;
     private int status;
     private List<OrderStatus> statusList;
     String delBoyNumber;
     public int transStatus=0;
+
+    public static List<String> addProduct=new ArrayList<>();
+
 
     double deliveryTime=0;
     CountDownTimer countDownTimer;
@@ -103,6 +118,11 @@ public class OrderSummaryActivity extends AppCompatActivity {
 
     public static long timeForDetalay=120000;
     ProgressDisplay progressDisplay;
+    List<ReturnProductModel> models=new ArrayList<>();
+
+    long time_to_return=30;
+
+//    List<CheckboxModel> models=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -178,6 +198,13 @@ public class OrderSummaryActivity extends AppCompatActivity {
                 }
         );
 
+        binding.tvCancelOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ReturnOrderDialog(models);
+            }
+        });
+
 
 //        }
     }
@@ -220,6 +247,25 @@ public class OrderSummaryActivity extends AppCompatActivity {
 
                             JSONArray jsonArray1 = jsonObject.getJSONArray("data");
                              myOrder = new Gson().fromJson(jsonArray1.getJSONObject(0).toString(), MyOrder.class);
+
+
+                             Orderproduct[] orderproducts=myOrder.getOrderproduct();
+                             for(int i=0;i<orderproducts.length;i++){
+                                 ReturnProductModel returnProductModel=new ReturnProductModel();
+                                         returnProductModel.setId(orderproducts[i].getId());
+                                         returnProductModel.setName(orderproducts[i].getName());
+                                         returnProductModel.setPrice(orderproducts[i].getSellPrice());
+                                         returnProductModel.setQty(orderproducts[i].getQty());
+                                         returnProductModel.setImage(orderproducts[i].getIcon());
+                                         returnProductModel.setSelected(false);
+
+                                 models.add(returnProductModel);
+
+
+
+
+                             }
+
                             setData(myOrder);
 
                             if(myOrder.getOrderStatus().equalsIgnoreCase("Waiting")||myOrder.getOrderStatus().equalsIgnoreCase("Placed")) {
@@ -341,6 +387,9 @@ public class OrderSummaryActivity extends AppCompatActivity {
         binding.billDetail.setText("ORDER ID : " + myOrder.getOrderId()+"\nBILL DETAILS");
         binding.merchantName.setText(merchant.getName());
 
+
+
+
         Glide.with(getApplicationContext()).load(AppConstraints.BASE_URL + AppConstraints.MERCHANT + merchant.getIcon()).into(binding.restImage);
         if(!myOrder.getOrderStatus().equalsIgnoreCase("Delivered")) {
             try {
@@ -406,6 +455,12 @@ public class OrderSummaryActivity extends AppCompatActivity {
                 countDownTimer.cancel();
             }
             binding.orderTime.setVisibility(View.GONE);
+
+//           String deliver_date_time= myOrder.getModifiedAt();
+//           String current_date_time= Constraint.getDate();
+//
+//            findDifference(deliver_date_time, current_date_time);
+
         }
         binding.merchantName1.setText(merchant.getName());
         binding.merchantAddress.setText(merchant.getAddress());
@@ -485,6 +540,66 @@ public class OrderSummaryActivity extends AppCompatActivity {
 
         loadStatus();
     }
+
+    private void findDifference(String start_date, String end_date) {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+
+        try {
+
+            Date d1 = sdf.parse(start_date);
+            Date d2 = sdf.parse(end_date);
+
+            long difference_In_Time = d2.getTime() - d1.getTime();
+
+
+            long difference_In_Minutes
+                    = (difference_In_Time / 1000) / 60;
+
+
+
+            Toast.makeText(this, ""+difference_In_Minutes, Toast.LENGTH_SHORT).show();
+
+            if (difference_In_Minutes<time_to_return){
+                binding.cardReturn.setVisibility(View.VISIBLE);
+                binding.tvCancelOrder.setVisibility(View.VISIBLE);
+                long remain_time_to_return=time_to_return-difference_In_Minutes;
+                CountreaderOTp(remain_time_to_return);
+
+
+            }else {
+                binding.cardReturn.setVisibility(View.GONE);
+            }
+
+        }
+
+        // Catch the Exception
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    private void CountreaderOTp(long minut_remain) {
+        long millisInFuture = minut_remain*1000*60;
+        long countDownInterval = 1000;
+        new CountDownTimer(millisInFuture, countDownInterval) {
+            public void onTick(long millisUntilFinished) {
+                //  tv_timer.setText("Verifying your OTP in - " + "00:" + millisUntilFinished / 1000 + " " + "Sec");
+                binding.tvReturnTimer.setText("Return Order in "+String.format("%d min, %d sec",
+                        TimeUnit.MILLISECONDS.toMinutes( millisUntilFinished),
+                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
+            }
+            public void onFinish() {
+                binding.cardReturn.setVisibility(View.GONE);
+
+            }
+        }.start();
+    }
+
+
     private void loadStatus() {
         //Log.e("dsd","dfdff");
         String js=singleTask.getValue("user");
@@ -516,12 +631,29 @@ public class OrderSummaryActivity extends AppCompatActivity {
                                 if(status.getOrder_status().equalsIgnoreCase("delivered")){
                                     delCount=i;
                                     order_status="delivered";
+
+                                    String deliver_date_time= myOrder.getModifiedAt();
+                                    String current_date_time= Constraint.getDate();
+
+                                    findDifference(deliver_date_time, current_date_time);
+
+
+
+
+
+
                                 }
 
                             }
                             count=statusList.size();
 
                             if(statusList.get(delCount).getOrder_status().equalsIgnoreCase("Delivered")){
+
+//                                String deliver_date_time= myOrder.getModifiedAt();
+//                                String current_date_time= Constraint.getDate();
+//
+//                                findDifference(deliver_date_time, current_date_time);
+
 
 
                                 try {
@@ -624,6 +756,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
                         binding.delNotice.setVisibility(View.GONE);
                     }
                 }
+
             }
         }else if(str.equalsIgnoreCase("Waiting")){
             binding.orderStatus.setText("Waiting for confirmation");
@@ -678,6 +811,9 @@ public class OrderSummaryActivity extends AppCompatActivity {
 
             }
 
+
+
+
         }else if(str.equalsIgnoreCase("Rejected")){
             binding.orderStatus.setText("Order Rejected");
             binding.orderStatus1.setVisibility(View.VISIBLE);
@@ -703,7 +839,6 @@ public class OrderSummaryActivity extends AppCompatActivity {
                 binding.delNotice.setVisibility(View.VISIBLE);
 
             }
-
         }else if(str.equalsIgnoreCase("Placed")){
             binding.orderStatus.setText("Waiting for confirmation");
             binding.orderStatus1.setVisibility(View.VISIBLE);
@@ -1153,4 +1288,110 @@ public class OrderSummaryActivity extends AppCompatActivity {
 
     }
 
+
+
+    private void ReturnOrderDialog(List<ReturnProductModel> model){
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.return_order_layout);
+        RecyclerView recycler_return_product=bottomSheetDialog.findViewById(R.id.recycler_return_product);
+        EditText et_message=bottomSheetDialog.findViewById(R.id.et_message);
+        MaterialButton fb_return=bottomSheetDialog.findViewById(R.id.fb_return);
+        ImageView iv_cancel=bottomSheetDialog.findViewById(R.id.iv_cancel);
+        iv_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        fb_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (addProduct.size()<1){
+                    Toast.makeText(OrderSummaryActivity.this, "Please select Item to be return", Toast.LENGTH_SHORT).show();
+                }else if (et_message.length()==0){
+                    Toast.makeText(OrderSummaryActivity.this, "Please write your reason to Return Order" , Toast.LENGTH_SHORT).show();
+                }else {
+                    for (int i=0;i<addProduct.size();i++){
+                        if (i==0){
+                            Product_IDs=addProduct.get(0);
+                        }else {
+                            Product_IDs=Product_IDs+","+addProduct.get(i);
+                        }
+                    }
+                    AddProductReturnApi(et_message.getText().toString(),bottomSheetDialog);
+                }
+
+            }
+        });
+
+        recycler_return_product.setHasFixedSize(true);
+        recycler_return_product.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recycler_return_product.setAdapter(new ReturnAdapter(getApplicationContext(),model, digi.coders.thecapsico.activity.OrderSummaryActivity.this));
+
+
+        bottomSheetDialog.show();
+
+
+    }
+
+    private void AddProductReturnApi(String message, BottomSheetDialog bottomSheetDialog) {
+        progressDisplay.showProgress();
+        String ven = singleTask.getValue("user");
+        User user = new Gson().fromJson(ven, User.class);
+        MyApi myApi = singleTask.getRetrofit().create(MyApi.class);
+        Call<JsonArray> call = myApi.ReturnOrderApi(user.getId(),orderId,message,Product_IDs);
+        call.enqueue(new Callback<JsonArray>() {
+            @Override
+            public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        JSONArray jsonArray = new JSONArray(new Gson().toJson(response.body()));
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(0);//new Gson().toJson(response.body()));
+                        String res = jsonObject1.getString("res");
+                        String message = jsonObject1.getString("message");
+                        Log.e("sdsd", jsonObject1.toString());
+                        if (res.equalsIgnoreCase("success")) {
+                            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                            bottomSheetDialog.dismiss();
+                            binding.cardReturn.setVisibility(View.GONE);
+                            loadData();
+                        } else {
+
+                            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                progressDisplay.hideProgress();
+            }
+
+            @Override
+            public void onFailure(Call<JsonArray> call, Throwable t) {
+                progressDisplay.hideProgress();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+
+
+
+
+
+    @Override
+    public void getData(String id) {
+        if (addProduct.contains(id)){
+            addProduct.remove(id);
+            Toast.makeText(this, "remove", Toast.LENGTH_SHORT).show();
+        }else {
+            addProduct.add(id);
+            Toast.makeText(this, "Add", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }

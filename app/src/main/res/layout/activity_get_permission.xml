@@ -50,7 +50,7 @@
             app:button_scale="0.93"
             android:textColor="@color/color_white"
             android:text="Use my current location"
-            android:background="#667DFC"/>
+            android:background="@color/colorAccent"/>
         <com.skydoves.elasticviews.ElasticButton
             android:id="@+id/opneDeliveryAddress"
             android:layout_width="match_parent"

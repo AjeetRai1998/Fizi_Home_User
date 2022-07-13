@@ -12,17 +12,17 @@
         android:text="Please choose your location"
         android:layout_centerInParent="true"
         />
+
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="CONFIRM LOCATION"
-        app:backgroundTint="@color/color_orange"
         android:padding="15dp"
+        android:text="CONFIRM LOCATION"
         android:textColor="@color/color_white"
         android:textStyle="bold"
-        app:cornerRadius="10dp"
-        />
+        app:backgroundTint="@color/color_black"
+        app:cornerRadius="10dp" />
 
 
 </RelativeLayout>

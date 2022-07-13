@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Add Money"
-                android:background="@color/color_blue"
+                android:background="@color/colorAccent"
                 android:textColor="@color/color_white"
                 android:textSize="15dp"
                 app:cornerRadius="20dp"

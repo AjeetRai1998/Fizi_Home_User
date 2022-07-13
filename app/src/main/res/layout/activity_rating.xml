@@ -1098,7 +1098,7 @@
                     android:textColor="@color/color_white"
                     app:button_scale="0.93"
                     android:background="@drawable/rect_bg_outline"
-                    android:backgroundTint="@color/color_green"
+                    android:backgroundTint="@color/color_black"
                     android:layout_alignParentBottom="true"
                     />
                 <TextView

@@ -18,12 +18,12 @@
             android:id="@+id/animGif"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/hungerji_logo"/>
         <TextView
             android:id="@+id/code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SwiggyIT Applied"
+            android:text="HUNGER50 Applied"
             android:textColor="#878686"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto_bold"

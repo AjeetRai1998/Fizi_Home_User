@@ -40,6 +40,21 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.My
         holder.binding.productNameWithQty.setText(orderItems[position].getQty()+" x "+orderItems[position].getName());
         holder.binding.productPrice.setText("\u20b9"+(Integer.parseInt(orderItems[position].getQty())*(Double.parseDouble(orderItems[position].getPrice())+Double.parseDouble(orderItems[position].getAddonproduct_prize1()))));
 
+        if (orderItems[position].getReturn_status().equalsIgnoreCase("false")){
+            holder.binding.tvReturnRequest.setVisibility(View.GONE);
+        }else if (orderItems[position].getReturn_status().equalsIgnoreCase("true")){
+            holder.binding.tvReturnRequest.setVisibility(View.VISIBLE);
+            holder.binding.tvReturnRequest.setText("(Return Request Sent)");
+            holder.binding.tvReturnRequest.setTextColor(mContext.getColor(R.color.colorAccent));
+        }else {
+            holder.binding.tvReturnRequest.setVisibility(View.VISIBLE);
+            holder.binding.tvReturnRequest.setText("(Item Returned Successfully)");
+            holder.binding.tvReturnRequest.setTextColor(mContext.getColor(R.color.color_green));
+
+        }
+
+
+
         if(orderItems[position].getAddonproductname()!=null) {
             if (!orderItems[position].getAddonproductname().equalsIgnoreCase("[]")) {
                 String[] str = orderItems[position].getAddonproductname().split(",");

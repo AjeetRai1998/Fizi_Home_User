@@ -23,11 +23,20 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:largeHeap="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.ReturnOrder"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ReturnOrderSummaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AllRestaurant"
+            android:exported="false" />
         <activity
             android:name=".activity.OfferRestaurentsActivity"
             android:exported="false" />
@@ -190,7 +199,8 @@
         <activity
             android:name=".activity.DashboardActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/introtheme" />
         <activity
             android:name=".activity.CapsicoMoneyActivity"
             android:exported="false"
@@ -336,8 +346,7 @@
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
+            android:value="@string/google_maps_key" /> <!-- AIzaSyD-RevwGI6_-EoiCB3XeVycXMCyFN8bB8I -->
         <service
             android:name=".helper.MyFirebaseMessagingService"
             android:enabled="true"

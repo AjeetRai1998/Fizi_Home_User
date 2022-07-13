@@ -179,5 +179,5 @@
         android:layout_alignParentBottom="true"
         android:padding="15dp"
         android:text="SUBMIT ticket"
-        app:backgroundTint="@color/color_green" />
+        app:backgroundTint="@color/colorAccent" />
 </RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Capsico</string>
+    <string name="app_name">Hungerji</string>
 
 
     <!-- facebook id -->
@@ -50,7 +50,8 @@
     <string name="otp_desc">We have send you a 6 digit verification code on</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="dummy_review">There is more to it than a five-star rating. While the exact characteristics of good reviews vary by industry, there are certain fundamental elements that great reviews have in common. It’s worth taking note of them. </string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCxVS4fkqxueNmz4VyDXqeReIeWD6dK4bo</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD-RevwGI6_-EoiCB3XeVycXMCyFN8bB8I</string>
+    //AIzaSyCxVS4fkqxueNmz4VyDXqeReIeWD6dK4bo
 
     <string name="addressline1_hint">Enter Flat No / Floor / Landmark </string>
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>

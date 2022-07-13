@@ -84,7 +84,7 @@ public class AllCategoriesActivity extends AppCompatActivity {
                             Category category=new Gson().fromJson(jsonArray1.getJSONObject(i).toString(),Category.class);
                             categoryList.add(category);
                         }
-                        binding.allCategoryList.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
+                        binding.allCategoryList.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
                         binding.allCategoryList.setAdapter(new RestaurantItemAdapter(2,categoryList));
                     }
                     else

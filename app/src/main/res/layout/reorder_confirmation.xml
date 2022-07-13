@@ -20,7 +20,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/ic_baseline_refresh_24"
-                android:tint="@color/pure_black"/>
+                android:tint="@color/color_white"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/pure_black"
+                android:textColor="@color/color_white"
                 android:textSize="22dp"/>
 
 
@@ -134,7 +134,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
                 android:text="Cancel"
-                android:textColor="@color/pure_black"
+                android:textColor="@color/color_white"
                 android:textSize="15dp" />
         </LinearLayout>
 

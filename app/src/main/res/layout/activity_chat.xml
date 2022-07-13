@@ -60,7 +60,7 @@
         android:layout_marginBottom="100dp"
         android:text="Chat With Us"
         android:textColor="@color/color_white"
-        app:backgroundTint="@color/color_blue"
+        app:backgroundTint="@color/color_black"
         app:icon="@drawable/chat_icon"
         app:iconTint="@color/color_white" />
 

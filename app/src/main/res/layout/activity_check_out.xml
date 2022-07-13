@@ -781,7 +781,7 @@
                         android:drawableRight="@drawable/forward_arrow"
                         android:drawableTint="@color/color_white"
                         android:text="Choose Method"
-                        app:backgroundTint="@color/color_blue"
+                        app:backgroundTint="@color/color_black"
                         app:cornerRadius="10dp"
                         android:textStyle="bold"
                         android:padding="10dp"
@@ -798,7 +798,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:visibility="gone"
-                app:cardBackgroundColor="@color/color_blue"
+                app:cardBackgroundColor="@color/colorAccent"
                 android:layout_marginBottom="5dp"
                 >
                 <LinearLayout

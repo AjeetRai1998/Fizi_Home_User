@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -107,11 +110,16 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.My
                     .placeholder(R.drawable.placeholder1).into(holder.binding.logo);
             if(merchant.getRating().equalsIgnoreCase("No Ratings Yet")) {
                 holder.binding.ratLayout.setVisibility(View.GONE);
+                holder.binding.rating.setText("0");
+                holder.binding.noRating.setText("(0)");
+                holder.binding.ratingBar.setRating(0);
             }else{
-                holder.binding.ratLayout.setVisibility(View.VISIBLE);
+                holder.binding.ratLayout.setVisibility(View.GONE);
                 holder.binding.rating.setText(merchant.getRating());
-                holder.binding.noRating.setText(merchant.getRatcount() + " Ratings");
+                holder.binding.noRating.setText("("+merchant.getRatcount() + ")");
+                holder.binding.ratingBar.setRating(Float.parseFloat(merchant.getRating()));
             }
+
 
             String lat = SharedPrefManagerLocation.getInstance(ctx).locationModel(Constraint.LATITUDE);
             String lon = SharedPrefManagerLocation.getInstance(ctx).locationModel(Constraint.LONGITUDE);
@@ -142,8 +150,10 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.My
             //holder.binding.estimatedTime.setText(merchant.getCategories());
 
             if (merchant.getDiscount() == 0) {
-                holder.binding.discountLayout.setVisibility(View.GONE);
+//                holder.binding.discountLayout.setVisibility(View.GONE);
+                holder.binding.rlDiscount.setVisibility(View.GONE);
             } else {
+                holder.binding.rlDiscount.setVisibility(View.VISIBLE);
                 if(merchant.getDiscount_type().equalsIgnoreCase("percentage")) {
                     holder.binding.discount.setText((int) merchant.getDiscount() + "" + "% OFF");
                     holder.binding.upto.setText("up to \u20b9"+merchant.getMax_use());
@@ -154,7 +164,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.My
 
 
             }
-            holder.binding.address.setText(merchant.getArea() + " | " + merchant.getDistance() + " km ");
+            holder.binding.address.setText(merchant.getArea());
+            holder.binding.tvMerchantDistance.setText(merchant.getDistance() + " km ");
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

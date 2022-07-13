@@ -147,14 +147,14 @@
         />
 
 </LinearLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addCart"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:layout_alignParentBottom="true"
-        app:backgroundTint="@color/color_blue"
         android:text="Add Cart"
         android:textStyle="bold"
-        />
+        app:backgroundTint="@color/colorAccent" />
 
 </RelativeLayout>

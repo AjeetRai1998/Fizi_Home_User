@@ -134,4 +134,7 @@ dependencies {
     implementation 'dev.shreyaspatil.EasyUpiPayment:EasyUpiPayment:3.0.3'
     implementation 'com.github.MackHartley:RoundedProgressBar:3.0.0'
     implementation "com.github.skydoves:balloon:1.4.2"
+
+    // marquee
+    implementation 'com.github.mehranelyas:RtlMarqueeView:1.2.0'
 }
